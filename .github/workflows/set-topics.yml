@@ -1,0 +1,33 @@
+name: set-topics
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  set-topics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      metadata: write
+
+    steps:
+      - name: Set repository topics
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            /repos/${{ github.repository }}/topics \
+            -f "names[]=llm" \
+            -f "names[]=ai-agent" \
+            -f "names[]=skill" \
+            -f "names[]=claude-code" \
+            -f "names[]=codex" \
+            -f "names[]=diagram" \
+            -f "names[]=flowchart" \
+            -f "names[]=dataflow" \
+            -f "names[]=tikz" \
+            -f "names[]=svg"
