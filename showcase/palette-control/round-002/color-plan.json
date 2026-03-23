@@ -1,0 +1,41 @@
+{
+  "color_mode": "category",
+  "category_source": "group",
+  "category_assignments": {
+    "n_user": "g_access",
+    "n_gateway": "g_access",
+    "n_router": "g_retrieval",
+    "n_rewrite": "g_retrieval",
+    "n_hyde": "g_retrieval",
+    "n_embed": "g_retrieval",
+    "n_retriever": "g_retrieval",
+    "n_cache": "g_retrieval",
+    "n_vector": "g_retrieval",
+    "n_bm25": "g_retrieval",
+    "n_graph": "g_retrieval",
+    "n_reranker": "g_retrieval",
+    "n_prompt": "g_generation",
+    "n_llm": "g_generation",
+    "n_guard": "g_generation",
+    "n_answer": "g_generation",
+    "n_judge": "g_generation",
+    "n_feedback": "g_ops",
+    "n_observe": "g_ops"
+  },
+  "category_colors": {
+    "g_access": "#4E79A7",
+    "g_retrieval": "#59A14F",
+    "g_generation": "#F28E2C",
+    "g_ops": "#AF7AA1",
+    "other": "#9C755F"
+  },
+  "theme_overrides": {
+    "background": "#F5F7FB",
+    "edge_color": "#334155",
+    "node_border": "#1E293B",
+    "node_text": "#0F172A",
+    "group_fill": "#FFFFFFAA",
+    "group_stroke": "#94A3B8",
+    "group_text": "#334155"
+  }
+}

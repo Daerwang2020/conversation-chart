@@ -1,0 +1,52 @@
+{
+  "round": "round-002",
+  "added": [
+    "n_router",
+    "n_hyde",
+    "n_graph",
+    "n_judge",
+    "e_21",
+    "e_22",
+    "e_25",
+    "e_26",
+    "e_27",
+    "e_28"
+  ],
+  "updated": [
+    "g_retrieval",
+    "g_generation",
+    "n_retriever",
+    "n_prompt",
+    "n_llm",
+    "n_guard",
+    "n_answer",
+    "n_feedback",
+    "n_observe",
+    "e_02",
+    "e_03",
+    "e_04",
+    "e_05",
+    "e_06",
+    "e_07",
+    "e_08",
+    "e_09",
+    "e_10",
+    "e_11",
+    "e_12",
+    "e_13",
+    "e_14",
+    "e_15",
+    "e_16",
+    "e_17",
+    "e_18",
+    "e_19",
+    "e_20",
+    "e_23",
+    "e_24"
+  ],
+  "removed": [],
+  "warnings": [
+    "Global theme updated via top-level theme object.",
+    "Critical edges rerouted with explicit waypoints to reduce text occlusion in dense RAG sections."
+  ]
+}

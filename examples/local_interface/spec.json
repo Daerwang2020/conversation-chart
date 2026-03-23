@@ -1,0 +1,10 @@
+{
+  "dsl": "../../showcase/rag-end2end/round-002/chart.dsl.json",
+  "input_md": "input.md",
+  "output_dir": "../../outputs/local-interface-demo",
+  "basename": "output",
+  "formats": ["png", "svg", "tex", "pdf"],
+  "tikz_compile": true,
+  "tikz_engine": "auto",
+  "max_occlusion_issues": 0
+}

@@ -1,0 +1,7 @@
+﻿{
+  "round": "round-002",
+  "added": ["n_kb", "n_escalate", "e_04", "e_05", "e_06", "e_07"],
+  "updated": ["n_route"],
+  "removed": [],
+  "warnings": []
+}

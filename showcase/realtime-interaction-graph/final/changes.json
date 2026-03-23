@@ -1,0 +1,10 @@
+﻿{
+  "round": "final",
+  "added": [
+    "n_client", "n_gateway", "n_session", "n_reco", "n_profile", "n_abtest", "n_eventbus", "n_vector", "n_stream", "n_feature", "n_model", "n_notif", "n_analytics", "n_observe",
+    "e_01", "e_02", "e_03", "e_04", "e_05", "e_06", "e_07", "e_08", "e_09", "e_10", "e_11", "e_12", "e_13", "e_14", "e_15", "e_16", "e_17", "e_18", "e_19", "e_20", "e_21"
+  ],
+  "updated": [],
+  "removed": [],
+  "warnings": []
+}

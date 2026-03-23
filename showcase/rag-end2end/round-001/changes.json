@@ -1,0 +1,11 @@
+﻿{
+  "round": "round-001",
+  "added": [
+    "g_access", "g_retrieval", "g_generation", "g_ops",
+    "n_user", "n_gateway", "n_rewrite", "n_embed", "n_retriever", "n_cache", "n_vector", "n_bm25", "n_reranker", "n_prompt", "n_llm", "n_guard", "n_answer", "n_feedback", "n_observe",
+    "e_01", "e_02", "e_03", "e_04", "e_05", "e_06", "e_07", "e_08", "e_09", "e_10", "e_11", "e_12", "e_13", "e_14", "e_15", "e_16", "e_17", "e_18", "e_19", "e_20"
+  ],
+  "updated": [],
+  "removed": [],
+  "warnings": []
+}

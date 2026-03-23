@@ -1,0 +1,7 @@
+﻿{
+  "round": "final",
+  "added": ["n_user", "n_dialog", "n_struct", "n_layout", "n_render", "n_trace", "e_01", "e_02", "e_03", "e_04", "e_05", "e_06"],
+  "updated": [],
+  "removed": [],
+  "warnings": []
+}

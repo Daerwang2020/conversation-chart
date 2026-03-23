@@ -1,0 +1,682 @@
+{
+  "version": "1.2",
+  "direction": "LR",
+  "theme": {
+    "background": "#F1F5F9",
+    "node_fill": "#FAFAFA",
+    "node_border": "#0F172A",
+    "node_text": "#111827",
+    "edge_color": "#334155",
+    "group_fill": "#FFFFFFCC",
+    "group_stroke": "#94A3B8",
+    "group_text": "#0F172A"
+  },
+  "groups": [
+    {
+      "id": "g_access",
+      "label": "Access Layer",
+      "nodes": [
+        "n_user",
+        "n_gateway"
+      ],
+      "style": {
+        "fill": "#DBEAFEAA",
+        "stroke": "#60A5FA",
+        "text": "#1D4ED8",
+        "padding": 30
+      }
+    },
+    {
+      "id": "g_retrieval",
+      "label": "Retrieval + Reasoning Layer",
+      "nodes": [
+        "n_router",
+        "n_rewrite",
+        "n_hyde",
+        "n_embed",
+        "n_retriever",
+        "n_vector",
+        "n_bm25",
+        "n_graph",
+        "n_reranker",
+        "n_cache"
+      ],
+      "style": {
+        "fill": "#DCFCE7AA",
+        "stroke": "#4ADE80",
+        "text": "#047857",
+        "padding": 36
+      }
+    },
+    {
+      "id": "g_generation",
+      "label": "Generation Layer",
+      "nodes": [
+        "n_prompt",
+        "n_llm",
+        "n_guard",
+        "n_answer",
+        "n_judge"
+      ],
+      "style": {
+        "fill": "#FDE68AB8",
+        "stroke": "#F59E0B",
+        "text": "#92400E",
+        "padding": 34
+      }
+    },
+    {
+      "id": "g_ops",
+      "label": "Ops",
+      "nodes": [
+        "n_feedback",
+        "n_observe"
+      ],
+      "style": {
+        "fill": "#E9D5FFB8",
+        "stroke": "#A78BFA",
+        "text": "#6D28D9",
+        "padding": 24
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n_user",
+      "label": "User",
+      "x": 190,
+      "y": 330,
+      "width": 180,
+      "height": 90,
+      "shape": "pill",
+      "style": {
+        "fill": "#BFDBFE",
+        "stroke": "#1D4ED8",
+        "text": "#1E3A8A"
+      }
+    },
+    {
+      "id": "n_gateway",
+      "label": "RAG Gateway",
+      "x": 420,
+      "y": 330,
+      "width": 220,
+      "height": 90,
+      "style": {
+        "fill": "#BAE6FD",
+        "stroke": "#0369A1",
+        "text": "#0C4A6E"
+      }
+    },
+    {
+      "id": "n_router",
+      "label": "Query Router",
+      "x": 680,
+      "y": 120,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#C7D2FE",
+        "stroke": "#4F46E5",
+        "text": "#3730A3"
+      }
+    },
+    {
+      "id": "n_rewrite",
+      "label": "Query Rewrite",
+      "x": 680,
+      "y": 240,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#86EFAC",
+        "stroke": "#16A34A",
+        "text": "#14532D"
+      }
+    },
+    {
+      "id": "n_hyde",
+      "label": "HyDE Generator",
+      "x": 680,
+      "y": 360,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#A7F3D0",
+        "stroke": "#059669",
+        "text": "#064E3B"
+      }
+    },
+    {
+      "id": "n_embed",
+      "label": "Embedding",
+      "x": 680,
+      "y": 480,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#6EE7B7",
+        "stroke": "#10B981",
+        "text": "#065F46"
+      }
+    },
+    {
+      "id": "n_retriever",
+      "label": "Hybrid Retriever",
+      "x": 680,
+      "y": 600,
+      "width": 240,
+      "height": 88,
+      "style": {
+        "fill": "#BEF264",
+        "stroke": "#65A30D",
+        "text": "#365314"
+      }
+    },
+    {
+      "id": "n_cache",
+      "label": "Retrieval Cache",
+      "x": 680,
+      "y": 720,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#DCFCE7",
+        "stroke": "#22C55E",
+        "text": "#166534"
+      }
+    },
+    {
+      "id": "n_vector",
+      "label": "Vector DB",
+      "x": 980,
+      "y": 290,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#C4B5FD",
+        "stroke": "#7C3AED",
+        "text": "#4C1D95"
+      }
+    },
+    {
+      "id": "n_bm25",
+      "label": "BM25 Index",
+      "x": 980,
+      "y": 430,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#DDD6FE",
+        "stroke": "#9333EA",
+        "text": "#581C87"
+      }
+    },
+    {
+      "id": "n_graph",
+      "label": "Graph Store",
+      "x": 980,
+      "y": 570,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#F5D0FE",
+        "stroke": "#C026D3",
+        "text": "#701A75"
+      }
+    },
+    {
+      "id": "n_reranker",
+      "label": "Reranker",
+      "x": 980,
+      "y": 710,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#E9D5FF",
+        "stroke": "#A855F7",
+        "text": "#6B21A8"
+      }
+    },
+    {
+      "id": "n_prompt",
+      "label": "Prompt Builder",
+      "x": 1260,
+      "y": 430,
+      "width": 230,
+      "height": 92,
+      "style": {
+        "fill": "#FDE68A",
+        "stroke": "#D97706",
+        "text": "#78350F"
+      }
+    },
+    {
+      "id": "n_llm",
+      "label": "LLM",
+      "x": 1550,
+      "y": 430,
+      "width": 180,
+      "height": 92,
+      "shape": "ellipse",
+      "style": {
+        "fill": "#FDBA74",
+        "stroke": "#EA580C",
+        "text": "#9A3412"
+      }
+    },
+    {
+      "id": "n_guard",
+      "label": "Guardrails",
+      "x": 1780,
+      "y": 350,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#FCA5A5",
+        "stroke": "#DC2626",
+        "text": "#7F1D1D"
+      }
+    },
+    {
+      "id": "n_answer",
+      "label": "Answer",
+      "x": 1780,
+      "y": 500,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#FDA4AF",
+        "stroke": "#E11D48",
+        "text": "#881337"
+      }
+    },
+    {
+      "id": "n_judge",
+      "label": "Groundedness Judge",
+      "x": 1550,
+      "y": 600,
+      "width": 230,
+      "height": 88,
+      "style": {
+        "fill": "#FBCFE8",
+        "stroke": "#DB2777",
+        "text": "#831843"
+      }
+    },
+    {
+      "id": "n_feedback",
+      "label": "Human Feedback",
+      "x": 1550,
+      "y": 720,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#DDD6FE",
+        "stroke": "#8B5CF6",
+        "text": "#5B21B6"
+      }
+    },
+    {
+      "id": "n_observe",
+      "label": "Observability",
+      "x": 1780,
+      "y": 720,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#CBD5E1",
+        "stroke": "#475569",
+        "text": "#1E293B"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_01",
+      "from": "n_user",
+      "to": "n_gateway",
+      "label": "Question",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_02",
+      "from": "n_gateway",
+      "to": "n_router",
+      "label": "Route",
+      "relation": "control",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_03",
+      "from": "n_router",
+      "to": "n_rewrite",
+      "label": "Rewrite Path",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_04",
+      "from": "n_router",
+      "to": "n_hyde",
+      "label": "HyDE Path",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_05",
+      "from": "n_router",
+      "to": "n_retriever",
+      "label": "Direct Path",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_06",
+      "from": "n_rewrite",
+      "to": "n_embed",
+      "label": "Embed Query",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_07",
+      "from": "n_hyde",
+      "to": "n_embed",
+      "label": "Synthetic Doc",
+      "relation": "feedback",
+      "style": {
+        "route": "curve",
+        "curve_offset": 90
+      }
+    },
+    {
+      "id": "e_08",
+      "from": "n_embed",
+      "to": "n_retriever",
+      "label": "Query Vector",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_09",
+      "from": "n_retriever",
+      "to": "n_cache",
+      "label": "Cache Probe",
+      "relation": "dependency",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_10",
+      "from": "n_retriever",
+      "to": "n_vector",
+      "label": "Dense Search",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_11",
+      "from": "n_retriever",
+      "to": "n_bm25",
+      "label": "Sparse Search",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_12",
+      "from": "n_retriever",
+      "to": "n_graph",
+      "label": "GraphRAG",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_13",
+      "from": "n_vector",
+      "to": "n_reranker",
+      "label": "Dense Hits",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": true
+      },
+      "waypoints": [
+        [
+          940,
+          334
+        ],
+        [
+          940,
+          754
+        ]
+      ]
+    },
+    {
+      "id": "e_14",
+      "from": "n_bm25",
+      "to": "n_reranker",
+      "label": "Sparse Hits",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_15",
+      "from": "n_graph",
+      "to": "n_reranker",
+      "label": "Graph Evidence",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_16",
+      "from": "n_reranker",
+      "to": "n_prompt",
+      "label": "Context Bundle",
+      "relation": "stream"
+    },
+    {
+      "id": "e_17",
+      "from": "n_prompt",
+      "to": "n_llm",
+      "label": "Augmented Prompt",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_18",
+      "from": "n_llm",
+      "to": "n_guard",
+      "label": "Draft",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_19",
+      "from": "n_guard",
+      "to": "n_answer",
+      "label": "Safe Answer",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_20",
+      "from": "n_answer",
+      "to": "n_judge",
+      "label": "Judge Input",
+      "relation": "control",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_21",
+      "from": "n_judge",
+      "to": "n_router",
+      "label": "Route Update",
+      "relation": "feedback",
+      "style": {
+        "route": "orthogonal",
+        "curve_offset": 130,
+        "avoid_obstacles": true
+      },
+      "waypoints": [
+        [
+          1550,
+          560
+        ],
+        [
+          920,
+          560
+        ],
+        [
+          920,
+          164
+        ]
+      ]
+    },
+    {
+      "id": "e_22",
+      "from": "n_judge",
+      "to": "n_rewrite",
+      "label": "Rewrite Hint",
+      "relation": "feedback",
+      "style": {
+        "route": "orthogonal",
+        "curve_offset": 80,
+        "avoid_obstacles": true
+      },
+      "waypoints": [
+        [
+          1550,
+          560
+        ],
+        [
+          920,
+          560
+        ],
+        [
+          920,
+          284
+        ]
+      ]
+    },
+    {
+      "id": "e_23",
+      "from": "n_answer",
+      "to": "n_user",
+      "label": "Response",
+      "relation": "feedback",
+      "style": {
+        "route": "orthogonal",
+        "curve_offset": 160,
+        "avoid_obstacles": true
+      },
+      "waypoints": [
+        [
+          1780,
+          260
+        ],
+        [
+          370,
+          260
+        ]
+      ]
+    },
+    {
+      "id": "e_24",
+      "from": "n_answer",
+      "to": "n_feedback",
+      "label": "Rating",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_25",
+      "from": "n_gateway",
+      "to": "n_observe",
+      "label": "Trace",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": true
+      },
+      "waypoints": [
+        [
+          1210,
+          375
+        ],
+        [
+          1210,
+          840
+        ],
+        [
+          1780,
+          840
+        ]
+      ]
+    },
+    {
+      "id": "e_26",
+      "from": "n_llm",
+      "to": "n_observe",
+      "label": "Latency",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_27",
+      "from": "n_reranker",
+      "to": "n_observe",
+      "label": "Recall@K",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": true
+      },
+      "waypoints": [
+        [
+          1490,
+          754
+        ],
+        [
+          1490,
+          840
+        ],
+        [
+          1780,
+          840
+        ]
+      ]
+    },
+    {
+      "id": "e_28",
+      "from": "n_judge",
+      "to": "n_observe",
+      "label": "Groundedness",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal"
+      }
+    }
+  ]
+}

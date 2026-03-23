@@ -1,0 +1,20 @@
+﻿{
+  "version": "1.0",
+  "direction": "LR",
+  "nodes": [
+    {"id": "n_ingest", "label": "Data Ingest", "x": 70, "y": 160, "width": 210, "height": 96, "style": {"fill": "#E0F2FE", "stroke": "#0284C7", "text": "#0C4A6E"}},
+    {"id": "n_clean", "label": "Clean & Validate", "x": 340, "y": 90, "width": 230, "height": 96, "style": {"fill": "#DCFCE7", "stroke": "#16A34A", "text": "#14532D"}},
+    {"id": "n_feature", "label": "Feature Build", "x": 340, "y": 250, "width": 230, "height": 96, "style": {"fill": "#FEF3C7", "stroke": "#D97706", "text": "#78350F"}},
+    {"id": "n_lake", "label": "Data Lake", "x": 640, "y": 90, "width": 210, "height": 96, "style": {"fill": "#EDE9FE", "stroke": "#7C3AED", "text": "#4C1D95"}},
+    {"id": "n_serving", "label": "Serving API", "x": 640, "y": 250, "width": 210, "height": 96, "style": {"fill": "#FFE4E6", "stroke": "#E11D48", "text": "#881337"}},
+    {"id": "n_monitor", "label": "Quality Monitor", "x": 920, "y": 160, "width": 230, "height": 96, "style": {"fill": "#ECFCCB", "stroke": "#65A30D", "text": "#365314"}}
+  ],
+  "edges": [
+    {"id": "e_01", "from": "n_ingest", "to": "n_clean"},
+    {"id": "e_02", "from": "n_ingest", "to": "n_feature"},
+    {"id": "e_03", "from": "n_clean", "to": "n_lake"},
+    {"id": "e_04", "from": "n_feature", "to": "n_serving"},
+    {"id": "e_05", "from": "n_lake", "to": "n_monitor"},
+    {"id": "e_06", "from": "n_serving", "to": "n_monitor"}
+  ]
+}

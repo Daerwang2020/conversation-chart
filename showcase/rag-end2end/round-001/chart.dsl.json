@@ -1,0 +1,464 @@
+﻿{
+  "version": "1.2",
+  "direction": "LR",
+  "theme": {
+    "background": "#F8FAFC",
+    "node_fill": "#FFFFFF",
+    "node_border": "#1E293B",
+    "node_text": "#0F172A",
+    "edge_color": "#475569",
+    "group_fill": "#FFFFFFAA",
+    "group_stroke": "#CBD5E1",
+    "group_text": "#475569"
+  },
+  "groups": [
+    {
+      "id": "g_access",
+      "label": "Access Layer",
+      "nodes": [
+        "n_user",
+        "n_gateway"
+      ],
+      "style": {
+        "fill": "#EFF6FFAA",
+        "stroke": "#93C5FD",
+        "text": "#1D4ED8",
+        "padding": 30
+      }
+    },
+    {
+      "id": "g_retrieval",
+      "label": "Retrieval Layer",
+      "nodes": [
+        "n_rewrite",
+        "n_embed",
+        "n_retriever",
+        "n_vector",
+        "n_bm25",
+        "n_reranker",
+        "n_cache"
+      ],
+      "style": {
+        "fill": "#ECFDF5AA",
+        "stroke": "#6EE7B7",
+        "text": "#047857",
+        "padding": 34
+      }
+    },
+    {
+      "id": "g_generation",
+      "label": "Generation Layer",
+      "nodes": [
+        "n_prompt",
+        "n_llm",
+        "n_guard",
+        "n_answer"
+      ],
+      "style": {
+        "fill": "#FFF7EDB8",
+        "stroke": "#FDBA74",
+        "text": "#C2410C",
+        "padding": 34
+      }
+    },
+    {
+      "id": "g_ops",
+      "label": "Ops",
+      "nodes": [
+        "n_feedback",
+        "n_observe"
+      ],
+      "style": {
+        "fill": "#F5F3FFB8",
+        "stroke": "#C4B5FD",
+        "text": "#6D28D9",
+        "padding": 24
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n_user",
+      "label": "User",
+      "x": 190,
+      "y": 330,
+      "width": 180,
+      "height": 90,
+      "shape": "pill",
+      "style": {
+        "fill": "#DBEAFE",
+        "stroke": "#2563EB",
+        "text": "#1E3A8A"
+      }
+    },
+    {
+      "id": "n_gateway",
+      "label": "RAG Gateway",
+      "x": 420,
+      "y": 330,
+      "width": 220,
+      "height": 90,
+      "style": {
+        "fill": "#E0F2FE",
+        "stroke": "#0284C7",
+        "text": "#0C4A6E"
+      }
+    },
+    {
+      "id": "n_rewrite",
+      "label": "Query Rewrite",
+      "x": 700,
+      "y": 190,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#DCFCE7",
+        "stroke": "#16A34A",
+        "text": "#14532D"
+      }
+    },
+    {
+      "id": "n_embed",
+      "label": "Embedding",
+      "x": 700,
+      "y": 310,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#D1FAE5",
+        "stroke": "#10B981",
+        "text": "#065F46"
+      }
+    },
+    {
+      "id": "n_retriever",
+      "label": "Retriever",
+      "x": 700,
+      "y": 430,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#ECFCCB",
+        "stroke": "#65A30D",
+        "text": "#365314"
+      }
+    },
+    {
+      "id": "n_cache",
+      "label": "Retrieval Cache",
+      "x": 700,
+      "y": 550,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#F0FDF4",
+        "stroke": "#22C55E",
+        "text": "#166534"
+      }
+    },
+    {
+      "id": "n_vector",
+      "label": "Vector DB",
+      "x": 980,
+      "y": 250,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#EDE9FE",
+        "stroke": "#7C3AED",
+        "text": "#4C1D95"
+      }
+    },
+    {
+      "id": "n_bm25",
+      "label": "BM25 Index",
+      "x": 980,
+      "y": 370,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#F3E8FF",
+        "stroke": "#9333EA",
+        "text": "#581C87"
+      }
+    },
+    {
+      "id": "n_reranker",
+      "label": "Reranker",
+      "x": 980,
+      "y": 490,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#FAE8FF",
+        "stroke": "#A855F7",
+        "text": "#6B21A8"
+      }
+    },
+    {
+      "id": "n_prompt",
+      "label": "Prompt Builder",
+      "x": 1260,
+      "y": 330,
+      "width": 230,
+      "height": 92,
+      "style": {
+        "fill": "#FEF3C7",
+        "stroke": "#D97706",
+        "text": "#78350F"
+      }
+    },
+    {
+      "id": "n_llm",
+      "label": "LLM",
+      "x": 1550,
+      "y": 330,
+      "width": 180,
+      "height": 92,
+      "shape": "ellipse",
+      "style": {
+        "fill": "#FFEDD5",
+        "stroke": "#EA580C",
+        "text": "#9A3412"
+      }
+    },
+    {
+      "id": "n_guard",
+      "label": "Guardrails",
+      "x": 1780,
+      "y": 260,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#FEE2E2",
+        "stroke": "#DC2626",
+        "text": "#7F1D1D"
+      }
+    },
+    {
+      "id": "n_answer",
+      "label": "Answer",
+      "x": 1780,
+      "y": 400,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#FFE4E6",
+        "stroke": "#E11D48",
+        "text": "#881337"
+      }
+    },
+    {
+      "id": "n_feedback",
+      "label": "Human Feedback",
+      "x": 1550,
+      "y": 530,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#F5F3FF",
+        "stroke": "#8B5CF6",
+        "text": "#5B21B6"
+      }
+    },
+    {
+      "id": "n_observe",
+      "label": "Observability",
+      "x": 1780,
+      "y": 530,
+      "width": 220,
+      "height": 88,
+      "style": {
+        "fill": "#E2E8F0",
+        "stroke": "#475569",
+        "text": "#1E293B"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_01",
+      "from": "n_user",
+      "to": "n_gateway",
+      "label": "Question",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_02",
+      "from": "n_gateway",
+      "to": "n_rewrite",
+      "label": "Normalize",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_03",
+      "from": "n_gateway",
+      "to": "n_embed",
+      "label": "Embed",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_04",
+      "from": "n_gateway",
+      "to": "n_retriever",
+      "label": "Retrieve",
+      "relation": "sync_request",
+      "style": {
+        "route": "orthogonal",
+        "avoid_obstacles": false
+      }
+    },
+    {
+      "id": "e_05",
+      "from": "n_rewrite",
+      "to": "n_retriever",
+      "label": "Rewritten Query",
+      "relation": "control",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_06",
+      "from": "n_embed",
+      "to": "n_vector",
+      "label": "Vector Search",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_07",
+      "from": "n_retriever",
+      "to": "n_bm25",
+      "label": "Lexical Search",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_08",
+      "from": "n_retriever",
+      "to": "n_cache",
+      "label": "Cache Probe",
+      "relation": "dependency",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_09",
+      "from": "n_vector",
+      "to": "n_reranker",
+      "label": "Dense Hits",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_10",
+      "from": "n_bm25",
+      "to": "n_reranker",
+      "label": "Sparse Hits",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_11",
+      "from": "n_reranker",
+      "to": "n_prompt",
+      "label": "Top-K Context",
+      "relation": "stream"
+    },
+    {
+      "id": "e_12",
+      "from": "n_prompt",
+      "to": "n_llm",
+      "label": "Augmented Prompt",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_13",
+      "from": "n_llm",
+      "to": "n_guard",
+      "label": "Draft",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_14",
+      "from": "n_guard",
+      "to": "n_answer",
+      "label": "Safe Answer",
+      "relation": "sync_request"
+    },
+    {
+      "id": "e_15",
+      "from": "n_answer",
+      "to": "n_user",
+      "label": "Response",
+      "relation": "feedback",
+      "style": {
+        "route": "curve",
+        "curve_offset": 130
+      }
+    },
+    {
+      "id": "e_16",
+      "from": "n_answer",
+      "to": "n_feedback",
+      "label": "Rating",
+      "relation": "async_event",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_17",
+      "from": "n_feedback",
+      "to": "n_rewrite",
+      "label": "Rewrite Signal",
+      "relation": "feedback",
+      "style": {
+        "route": "curve",
+        "curve_offset": 90
+      }
+    },
+    {
+      "id": "e_18",
+      "from": "n_gateway",
+      "to": "n_observe",
+      "label": "Trace",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_19",
+      "from": "n_llm",
+      "to": "n_observe",
+      "label": "Latency",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal"
+      }
+    },
+    {
+      "id": "e_20",
+      "from": "n_reranker",
+      "to": "n_observe",
+      "label": "Recall@K",
+      "relation": "observability",
+      "style": {
+        "route": "orthogonal"
+      }
+    }
+  ]
+}

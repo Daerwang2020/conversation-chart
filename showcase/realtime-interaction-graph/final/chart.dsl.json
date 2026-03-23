@@ -1,0 +1,79 @@
+﻿{
+  "version": "1.1",
+  "direction": "LR",
+  "groups": [
+    {
+      "id": "g_edge",
+      "label": "Edge Layer",
+      "nodes": ["n_client", "n_gateway"],
+      "style": {"fill": "#EFF6FFAA", "stroke": "#93C5FD", "text": "#1D4ED8", "padding": 30}
+    },
+    {
+      "id": "g_online",
+      "label": "Online Services",
+      "nodes": ["n_session", "n_reco", "n_profile", "n_abtest"],
+      "style": {"fill": "#ECFDF5AA", "stroke": "#6EE7B7", "text": "#047857", "padding": 34}
+    },
+    {
+      "id": "g_data_ml",
+      "label": "Data + ML Plane",
+      "nodes": ["n_eventbus", "n_stream", "n_feature", "n_vector", "n_model", "n_notif", "n_analytics"],
+      "style": {"fill": "#FFF7EDB8", "stroke": "#FDBA74", "text": "#C2410C", "padding": 36}
+    },
+    {
+      "id": "g_ops",
+      "label": "Ops",
+      "nodes": ["n_observe"],
+      "style": {"fill": "#F5F3FFB8", "stroke": "#C4B5FD", "text": "#6D28D9", "padding": 22}
+    }
+  ],
+  "nodes": [
+    {"id": "n_client", "label": "Client Apps", "x": 80, "y": 360, "width": 220, "height": 90, "shape": "pill", "style": {"fill": "#DBEAFE", "stroke": "#2563EB", "text": "#1E3A8A"}},
+    {"id": "n_gateway", "label": "API Gateway", "x": 360, "y": 360, "width": 220, "height": 90, "shape": "rounded", "style": {"fill": "#E0F2FE", "stroke": "#0284C7", "text": "#0C4A6E"}},
+
+    {"id": "n_session", "label": "Session Service", "x": 670, "y": 190, "width": 220, "height": 90, "style": {"fill": "#DCFCE7", "stroke": "#16A34A", "text": "#14532D"}},
+    {"id": "n_reco", "label": "Recommendation Service", "x": 670, "y": 360, "width": 260, "height": 100, "style": {"fill": "#ECFCCB", "stroke": "#65A30D", "text": "#365314"}},
+    {"id": "n_profile", "label": "Profile Service", "x": 670, "y": 540, "width": 220, "height": 90, "style": {"fill": "#D1FAE5", "stroke": "#10B981", "text": "#065F46"}},
+    {"id": "n_abtest", "label": "A/B Controller", "x": 970, "y": 190, "width": 220, "height": 90, "style": {"fill": "#F0FDF4", "stroke": "#22C55E", "text": "#166534"}},
+
+    {"id": "n_eventbus", "label": "Event Bus", "x": 970, "y": 360, "width": 220, "height": 90, "shape": "ellipse", "style": {"fill": "#EDE9FE", "stroke": "#7C3AED", "text": "#4C1D95"}},
+    {"id": "n_vector", "label": "Vector Store", "x": 970, "y": 540, "width": 220, "height": 90, "style": {"fill": "#F3E8FF", "stroke": "#9333EA", "text": "#581C87"}},
+
+    {"id": "n_stream", "label": "Stream Processor", "x": 1270, "y": 220, "width": 240, "height": 90, "style": {"fill": "#FEF3C7", "stroke": "#D97706", "text": "#78350F"}},
+    {"id": "n_feature", "label": "Feature Store", "x": 1270, "y": 360, "width": 220, "height": 90, "style": {"fill": "#FFEDD5", "stroke": "#EA580C", "text": "#9A3412"}},
+    {"id": "n_model", "label": "Model Serving", "x": 1270, "y": 540, "width": 220, "height": 90, "style": {"fill": "#FEE2E2", "stroke": "#DC2626", "text": "#7F1D1D"}},
+
+    {"id": "n_notif", "label": "Notification", "x": 1570, "y": 220, "width": 220, "height": 90, "style": {"fill": "#FDF4FF", "stroke": "#C026D3", "text": "#86198F"}},
+    {"id": "n_analytics", "label": "Analytics Warehouse", "x": 1570, "y": 380, "width": 250, "height": 90, "style": {"fill": "#E2E8F0", "stroke": "#475569", "text": "#1E293B"}},
+    {"id": "n_observe", "label": "Observability", "x": 1570, "y": 540, "width": 230, "height": 90, "style": {"fill": "#FAE8FF", "stroke": "#A855F7", "text": "#6B21A8"}}
+  ],
+  "edges": [
+    {"id": "e_01", "from": "n_client", "to": "n_gateway", "label": "HTTPS", "relation": "sync_request"},
+
+    {"id": "e_02", "from": "n_gateway", "to": "n_session", "label": "JWT", "relation": "sync_request"},
+    {"id": "e_03", "from": "n_gateway", "to": "n_reco", "label": "Top-K Request", "relation": "sync_request"},
+    {"id": "e_04", "from": "n_gateway", "to": "n_profile", "label": "User Context", "relation": "sync_request"},
+
+    {"id": "e_05", "from": "n_gateway", "to": "n_eventbus", "label": "Request Log", "relation": "async_event", "style": {"route": "orthogonal"}},
+    {"id": "e_06", "from": "n_session", "to": "n_eventbus", "label": "Session Event", "relation": "async_event", "style": {"route": "orthogonal"}},
+    {"id": "e_07", "from": "n_profile", "to": "n_eventbus", "label": "Profile Updated", "relation": "async_event", "style": {"route": "orthogonal"}},
+
+    {"id": "e_08", "from": "n_eventbus", "to": "n_stream", "label": "Topic Stream", "relation": "stream"},
+    {"id": "e_09", "from": "n_stream", "to": "n_feature", "label": "Feature Upsert", "relation": "stream"},
+    {"id": "e_10", "from": "n_stream", "to": "n_analytics", "label": "Fact Sink", "relation": "stream"},
+    {"id": "e_11", "from": "n_eventbus", "to": "n_notif", "label": "Trigger", "relation": "async_event"},
+
+    {"id": "e_12", "from": "n_reco", "to": "n_feature", "label": "Feature Fetch", "relation": "sync_request"},
+    {"id": "e_13", "from": "n_reco", "to": "n_model", "label": "Rank", "relation": "sync_request"},
+    {"id": "e_14", "from": "n_feature", "to": "n_vector", "label": "Index Sync", "relation": "replication", "style": {"route": "orthogonal"}},
+    {"id": "e_15", "from": "n_model", "to": "n_reco", "label": "Scores", "relation": "feedback", "style": {"route": "curve", "curve_offset": 120}},
+
+    {"id": "e_16", "from": "n_abtest", "to": "n_reco", "label": "Traffic Policy", "relation": "control", "style": {"route": "orthogonal"}},
+    {"id": "e_17", "from": "n_analytics", "to": "n_abtest", "label": "Experiment Readout", "relation": "feedback", "style": {"route": "curve", "curve_offset": 80}},
+
+    {"id": "e_18", "from": "n_gateway", "to": "n_observe", "label": "Trace", "relation": "observability", "style": {"route": "orthogonal"}},
+    {"id": "e_19", "from": "n_reco", "to": "n_observe", "label": "Metrics", "relation": "observability", "style": {"route": "orthogonal"}},
+    {"id": "e_20", "from": "n_stream", "to": "n_observe", "label": "Lag", "relation": "observability", "style": {"route": "orthogonal"}},
+    {"id": "e_21", "from": "n_model", "to": "n_observe", "label": "Latency", "relation": "observability", "style": {"route": "orthogonal"}}
+  ]
+}

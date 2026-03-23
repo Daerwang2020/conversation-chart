@@ -1,0 +1,38 @@
+﻿{
+  "version": "1.0",
+  "direction": "TB",
+  "nodes": [
+    {"id": "n_src_tokens", "label": "Source Tokens", "x": 90, "y": 70, "width": 220, "height": 88, "style": {"fill": "#DBEAFE", "stroke": "#2563EB", "text": "#1E3A8A"}},
+    {"id": "n_tgt_tokens", "label": "Target Tokens", "x": 1140, "y": 70, "width": 220, "height": 88, "style": {"fill": "#FCE7F3", "stroke": "#DB2777", "text": "#831843"}},
+
+    {"id": "n_src_embed", "label": "Token Embedding", "x": 90, "y": 200, "width": 220, "height": 88, "style": {"fill": "#E0F2FE", "stroke": "#0284C7", "text": "#0C4A6E"}},
+    {"id": "n_src_pos", "label": "Positional Encoding", "x": 360, "y": 200, "width": 230, "height": 88, "style": {"fill": "#E0F7FA", "stroke": "#0891B2", "text": "#155E75"}},
+
+    {"id": "n_tgt_embed", "label": "Token Embedding", "x": 1140, "y": 200, "width": 220, "height": 88, "style": {"fill": "#FDF2F8", "stroke": "#EC4899", "text": "#9D174D"}},
+    {"id": "n_tgt_pos", "label": "Positional Encoding", "x": 870, "y": 200, "width": 230, "height": 88, "style": {"fill": "#FAE8FF", "stroke": "#A855F7", "text": "#6B21A8"}},
+
+    {"id": "n_encoder", "label": "Encoder Stack (Nx)", "x": 250, "y": 360, "width": 340, "height": 110, "style": {"fill": "#DCFCE7", "stroke": "#16A34A", "text": "#14532D"}},
+    {"id": "n_masked_attn", "label": "Masked Self-Attention", "x": 870, "y": 360, "width": 300, "height": 96, "style": {"fill": "#FEF3C7", "stroke": "#D97706", "text": "#78350F"}},
+    {"id": "n_cross_attn", "label": "Cross-Attention", "x": 870, "y": 500, "width": 300, "height": 96, "style": {"fill": "#FFF7ED", "stroke": "#EA580C", "text": "#7C2D12"}},
+    {"id": "n_ffn", "label": "Feed Forward", "x": 870, "y": 640, "width": 300, "height": 96, "style": {"fill": "#F1F5F9", "stroke": "#64748B", "text": "#334155"}},
+
+    {"id": "n_linear", "label": "Linear + Softmax", "x": 870, "y": 780, "width": 300, "height": 96, "style": {"fill": "#EDE9FE", "stroke": "#7C3AED", "text": "#4C1D95"}},
+    {"id": "n_output", "label": "Next Token", "x": 870, "y": 920, "width": 300, "height": 88, "style": {"fill": "#ECFCCB", "stroke": "#65A30D", "text": "#365314"}}
+  ],
+  "edges": [
+    {"id": "e_01", "from": "n_src_tokens", "to": "n_src_embed"},
+    {"id": "e_02", "from": "n_src_embed", "to": "n_encoder"},
+    {"id": "e_03", "from": "n_src_pos", "to": "n_encoder"},
+
+    {"id": "e_04", "from": "n_tgt_tokens", "to": "n_tgt_embed"},
+    {"id": "e_05", "from": "n_tgt_embed", "to": "n_masked_attn"},
+    {"id": "e_06", "from": "n_tgt_pos", "to": "n_masked_attn"},
+
+    {"id": "e_07", "from": "n_masked_attn", "to": "n_cross_attn"},
+    {"id": "e_08", "from": "n_encoder", "to": "n_cross_attn"},
+    {"id": "e_09", "from": "n_cross_attn", "to": "n_ffn"},
+    {"id": "e_10", "from": "n_ffn", "to": "n_linear"},
+    {"id": "e_11", "from": "n_linear", "to": "n_output"},
+    {"id": "e_12", "from": "n_output", "to": "n_tgt_tokens"}
+  ]
+}

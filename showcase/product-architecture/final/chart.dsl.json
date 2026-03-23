@@ -1,0 +1,20 @@
+﻿{
+  "version": "1.0",
+  "direction": "LR",
+  "nodes": [
+    {"id": "n_user", "label": "User Intent", "x": 70, "y": 180, "width": 210, "height": 96, "style": {"fill": "#DBEAFE", "stroke": "#2563EB", "text": "#1E3A8A"}},
+    {"id": "n_dialog", "label": "Dialogue Orchestrator", "x": 350, "y": 180, "width": 260, "height": 96, "style": {"fill": "#E0E7FF", "stroke": "#4F46E5", "text": "#312E81"}},
+    {"id": "n_struct", "label": "Structure Planner", "x": 680, "y": 90, "width": 240, "height": 96, "style": {"fill": "#ECFDF5", "stroke": "#059669", "text": "#065F46"}},
+    {"id": "n_layout", "label": "Layout Engine", "x": 680, "y": 270, "width": 240, "height": 96, "style": {"fill": "#FEF3C7", "stroke": "#D97706", "text": "#78350F"}},
+    {"id": "n_render", "label": "PNG Renderer", "x": 990, "y": 180, "width": 220, "height": 96, "style": {"fill": "#FCE7F3", "stroke": "#DB2777", "text": "#831843"}},
+    {"id": "n_trace", "label": "Source-Visual Mapping", "x": 990, "y": 330, "width": 260, "height": 96, "style": {"fill": "#F3E8FF", "stroke": "#9333EA", "text": "#581C87"}}
+  ],
+  "edges": [
+    {"id": "e_01", "from": "n_user", "to": "n_dialog"},
+    {"id": "e_02", "from": "n_dialog", "to": "n_struct"},
+    {"id": "e_03", "from": "n_dialog", "to": "n_layout"},
+    {"id": "e_04", "from": "n_struct", "to": "n_render"},
+    {"id": "e_05", "from": "n_layout", "to": "n_render"},
+    {"id": "e_06", "from": "n_render", "to": "n_trace"}
+  ]
+}

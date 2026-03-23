@@ -1,0 +1,59 @@
+name: ci
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install minimal runtime deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow
+
+      - name: Syntax check
+        run: |
+          python -m py_compile scripts/*.py
+
+      - name: Smoke test (pipeline)
+        run: |
+          python scripts/run_local_pipeline.py --spec showcase/palette-control/round-001/spec.json
+
+      - name: Validate smoke outputs
+        run: |
+          python - << 'PY'
+          import json
+          from pathlib import Path
+
+          base = Path("showcase/palette-control/round-001")
+          required = [
+              base / "chart.png",
+              base / "chart.layout.json",
+              base / "chart.map.json",
+              base / "chart.svg",
+              base / "chart.tex",
+              base / "chart.manifest.json",
+          ]
+          missing = [str(p) for p in required if not p.exists()]
+          if missing:
+              raise SystemExit(f"Missing smoke outputs: {missing}")
+
+          manifest = json.loads((base / "chart.manifest.json").read_text(encoding="utf-8-sig"))
+          status = manifest.get("status")
+          if status != "ok":
+              raise SystemExit(f"Smoke pipeline status is not ok: {status}")
+          print("Smoke test passed with status=ok")
+          PY

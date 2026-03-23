@@ -1,0 +1,45 @@
+﻿{
+  "version": "1.0",
+  "direction": "LR",
+  "nodes": [
+    {"id": "n_client", "label": "Web / Mobile Client", "x": 60, "y": 250, "width": 240, "height": 92, "style": {"fill": "#DBEAFE", "stroke": "#2563EB", "text": "#1E3A8A"}},
+    {"id": "n_dns", "label": "DNS", "x": 340, "y": 160, "width": 180, "height": 84, "style": {"fill": "#E0F2FE", "stroke": "#0284C7", "text": "#0C4A6E"}},
+    {"id": "n_cdn", "label": "CDN + Edge Cache", "x": 340, "y": 300, "width": 220, "height": 84, "style": {"fill": "#E0F7FA", "stroke": "#0891B2", "text": "#155E75"}},
+    {"id": "n_waf", "label": "WAF", "x": 610, "y": 300, "width": 170, "height": 84, "style": {"fill": "#FEF3C7", "stroke": "#D97706", "text": "#78350F"}},
+    {"id": "n_lb", "label": "L7 Load Balancer", "x": 820, "y": 300, "width": 230, "height": 84, "style": {"fill": "#FFF7ED", "stroke": "#EA580C", "text": "#7C2D12"}},
+    {"id": "n_gateway", "label": "API Gateway", "x": 1090, "y": 300, "width": 210, "height": 84, "style": {"fill": "#F3E8FF", "stroke": "#9333EA", "text": "#581C87"}},
+
+    {"id": "n_auth", "label": "Auth Service", "x": 1350, "y": 140, "width": 210, "height": 84, "style": {"fill": "#FCE7F3", "stroke": "#DB2777", "text": "#831843"}},
+    {"id": "n_user", "label": "User Service", "x": 1350, "y": 260, "width": 210, "height": 84, "style": {"fill": "#DCFCE7", "stroke": "#16A34A", "text": "#14532D"}},
+    {"id": "n_order", "label": "Order Service", "x": 1350, "y": 380, "width": 210, "height": 84, "style": {"fill": "#ECFCCB", "stroke": "#65A30D", "text": "#365314"}},
+    {"id": "n_payment", "label": "Payment Service", "x": 1350, "y": 500, "width": 210, "height": 84, "style": {"fill": "#EDE9FE", "stroke": "#7C3AED", "text": "#4C1D95"}},
+
+    {"id": "n_redis", "label": "Redis", "x": 1610, "y": 200, "width": 170, "height": 84, "style": {"fill": "#FFE4E6", "stroke": "#E11D48", "text": "#881337"}},
+    {"id": "n_mysql", "label": "MySQL Cluster", "x": 1610, "y": 340, "width": 210, "height": 84, "style": {"fill": "#E2E8F0", "stroke": "#475569", "text": "#1E293B"}},
+    {"id": "n_kafka", "label": "Kafka", "x": 1610, "y": 480, "width": 170, "height": 84, "style": {"fill": "#F1F5F9", "stroke": "#64748B", "text": "#334155"}},
+    {"id": "n_observe", "label": "Observability Stack", "x": 1090, "y": 520, "width": 240, "height": 84, "style": {"fill": "#FAE8FF", "stroke": "#A855F7", "text": "#6B21A8"}}
+  ],
+  "edges": [
+    {"id": "e_01", "from": "n_client", "to": "n_dns"},
+    {"id": "e_02", "from": "n_client", "to": "n_cdn"},
+    {"id": "e_03", "from": "n_cdn", "to": "n_waf"},
+    {"id": "e_04", "from": "n_waf", "to": "n_lb"},
+    {"id": "e_05", "from": "n_lb", "to": "n_gateway"},
+
+    {"id": "e_06", "from": "n_gateway", "to": "n_auth"},
+    {"id": "e_07", "from": "n_gateway", "to": "n_user"},
+    {"id": "e_08", "from": "n_gateway", "to": "n_order"},
+    {"id": "e_09", "from": "n_gateway", "to": "n_payment"},
+
+    {"id": "e_10", "from": "n_auth", "to": "n_redis"},
+    {"id": "e_11", "from": "n_user", "to": "n_mysql"},
+    {"id": "e_12", "from": "n_order", "to": "n_mysql"},
+    {"id": "e_13", "from": "n_order", "to": "n_kafka"},
+    {"id": "e_14", "from": "n_payment", "to": "n_kafka"},
+
+    {"id": "e_15", "from": "n_auth", "to": "n_observe"},
+    {"id": "e_16", "from": "n_user", "to": "n_observe"},
+    {"id": "e_17", "from": "n_order", "to": "n_observe"},
+    {"id": "e_18", "from": "n_payment", "to": "n_observe"}
+  ]
+}

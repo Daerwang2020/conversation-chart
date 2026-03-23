@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.0",
+  "direction": "LR",
+  "nodes": [
+    {"id": "n_intake", "label": "Incident Intake", "x": 80, "y": 190, "width": 210, "height": 100, "style": {"fill": "#E3F2FD", "stroke": "#1565C0", "text": "#0D47A1"}},
+    {"id": "n_classify", "label": "Classify Severity", "x": 360, "y": 190, "width": 230, "height": 100, "style": {"fill": "#E8F5E9", "stroke": "#2E7D32", "text": "#1B5E20"}},
+    {"id": "n_route", "label": "Route Decision", "x": 670, "y": 190, "width": 210, "height": 100, "style": {"fill": "#FFF8E1", "stroke": "#F9A825", "text": "#F57F17"}},
+    {"id": "n_resolve", "label": "Resolve", "x": 950, "y": 190, "width": 210, "height": 100, "style": {"fill": "#F3E5F5", "stroke": "#8E24AA", "text": "#6A1B9A"}},
+    {"id": "n_kb", "label": "Query Knowledge Base", "x": 360, "y": 340, "width": 230, "height": 100, "style": {"fill": "#E0F7FA", "stroke": "#00838F", "text": "#006064"}},
+    {"id": "n_escalate", "label": "Escalate On-call", "x": 950, "y": 340, "width": 210, "height": 100, "style": {"fill": "#FFEBEE", "stroke": "#C62828", "text": "#B71C1C"}}
+  ],
+  "edges": [
+    {"id": "e_01", "from": "n_intake", "to": "n_classify"},
+    {"id": "e_02", "from": "n_classify", "to": "n_route"},
+    {"id": "e_03", "from": "n_route", "to": "n_resolve"},
+    {"id": "e_04", "from": "n_classify", "to": "n_kb"},
+    {"id": "e_05", "from": "n_kb", "to": "n_route"},
+    {"id": "e_06", "from": "n_route", "to": "n_escalate"},
+    {"id": "e_07", "from": "n_escalate", "to": "n_resolve"}
+  ]
+}

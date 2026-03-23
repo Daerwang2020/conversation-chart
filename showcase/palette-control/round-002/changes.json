@@ -1,0 +1,10 @@
+{
+  "round": "round-002",
+  "added": [],
+  "updated": [],
+  "removed": [],
+  "warnings": [
+    "Controlled edit: switched color-plan.json palette while keeping category assignments stable.",
+    "No node/edge/group IDs changed."
+  ]
+}

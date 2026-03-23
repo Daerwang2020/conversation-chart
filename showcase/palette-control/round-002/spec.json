@@ -1,0 +1,13 @@
+{
+  "dsl": "chart.dsl.json",
+  "output_dir": ".",
+  "basename": "chart",
+  "formats": [
+    "png",
+    "svg",
+    "tex"
+  ],
+  "tikz_compile": false,
+  "max_occlusion_issues": 0,
+  "color_plan": "color-plan.json"
+}

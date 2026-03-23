@@ -1,0 +1,23 @@
+{
+  "color_mode": "category",
+  "category_source": "group",
+  "category_assignments": {
+    "n_user": "access",
+    "n_gateway": "access",
+    "n_retriever": "retrieval",
+    "n_prompt": "generation",
+    "n_observe": "ops"
+  },
+  "category_colors": {
+    "access": "#56B4E9",
+    "retrieval": "#009E73",
+    "generation": "#E69F00",
+    "ops": "#CC79A7"
+  },
+  "theme_overrides": {
+    "background": "#F8FAFC",
+    "edge_color": "#475569",
+    "node_border": "#1E293B",
+    "node_text": "#0F172A"
+  }
+}

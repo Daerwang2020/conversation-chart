@@ -1,0 +1,10 @@
+﻿{
+  "round": "final",
+  "added": [
+    "n_src_tokens", "n_tgt_tokens", "n_src_embed", "n_src_pos", "n_tgt_embed", "n_tgt_pos", "n_encoder", "n_masked_attn", "n_cross_attn", "n_ffn", "n_linear", "n_output",
+    "e_01", "e_02", "e_03", "e_04", "e_05", "e_06", "e_07", "e_08", "e_09", "e_10", "e_11", "e_12"
+  ],
+  "updated": [],
+  "removed": [],
+  "warnings": []
+}

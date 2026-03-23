@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build / outputs
+outputs/
+showcase/**/chart.manifest.json
+showcase/**/chart.layout.json
+showcase/**/chart.occlusion.json
+showcase/**/chart.map.json
+showcase/**/chart.svg
+showcase/**/chart.tex
+showcase/**/chart.pdf
+showcase/**/chart.render.log
+showcase/**/chart.render.status.json
+showcase/**/chart.colored.dsl.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
