@@ -139,32 +139,3 @@ Palette Round-002 (same categories, new palette):
 
 ![Palette Round-002](showcase/palette-control/round-002/chart.png)
 
-## GitHub Discoverability
-
-Suggested repository description:
-
-- EN: `LLM-native conversation chart skill for flowcharts/dataflow/system diagrams with multi-round controllable edits, occlusion-aware rendering, and PNG/SVG/TikZ outputs.`
-- ZH: `面向流程图/数据流图/系统架构图的 LLM 对话式绘图 Skill，支持多轮可控编辑、遮蔽检测与 PNG/SVG/TikZ 导出。`
-
-Suggested GitHub topics:
-
-- `llm`
-- `ai-agent`
-- `skill`
-- `claude-code`
-- `codex`
-- `diagram`
-- `flowchart`
-- `dataflow`
-- `tikz`
-- `svg`
-- `rag`
-- `visualization`
-
-## References
-
-- `SKILL.md`
-- `references/output-contract.md`
-- `references/edit-protocol.md`
-- `references/color-presets.md`
-- `docs/GITHUB_RELEASE_CHECKLIST.md`
