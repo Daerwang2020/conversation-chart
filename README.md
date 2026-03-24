@@ -2,7 +2,7 @@
 
 A paper-figure diagram skill for **Claude/Codex workflows**, built on a **mandatory local file/script pipeline**, **controllable multi-round edits**, and **source-to-visual traceability**.
 
-![hero](hero.png)
+![hero](assets/demo.jpg.png)
 
 ## Why it stands out
 
