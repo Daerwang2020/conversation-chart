@@ -23,6 +23,7 @@ Minimum required local inputs/outputs:
 ```json
 {
   "dsl": "path/to/chart.dsl.json",
+  "style_profile": "references/style-profiles/clean-rounded-v1.json",
   "color_plan": "path/to/color-plan.json",
   "input_md": "input.md",
   "output_dir": "outputs/run-001",
@@ -41,6 +42,8 @@ python scripts/apply_color_plan.py --dsl <dsl> --plan <color_plan> --output <bas
 ```
 
 Then downstream render/export uses the colored DSL.
+
+`style_profile` is an optional planning-time hint for LLM/skill orchestration. The current renderer does not parse this field directly.
 
 ## `color-plan.json` Schema (LLM output)
 

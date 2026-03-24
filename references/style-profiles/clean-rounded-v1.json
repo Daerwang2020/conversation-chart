@@ -1,0 +1,60 @@
+{
+  "name": "clean-rounded-v1",
+  "version": "1.0",
+  "language": "en",
+  "intent": "Create clean, linear, rounded-corner architecture diagrams for README and technical documentation.",
+  "visual_constraints": {
+    "overall_style": [
+      "clean",
+      "minimal",
+      "linear",
+      "rounded-corner first"
+    ],
+    "forbidden_styles": [
+      "heavy shadows",
+      "strong gradients",
+      "glassmorphism",
+      "decorative textures",
+      "cluttered backgrounds"
+    ],
+    "node_shape_default": "rounded",
+    "node_corner_radius_px": 14,
+    "group_corner_radius_px": 16,
+    "line_width_px": 2,
+    "edge_route_preference": "orthogonal",
+    "canvas_background": "#EEF1F4",
+    "typography_tone": "high legibility, medium-bold titles, neutral body text"
+  },
+  "layout_rules": {
+    "flow_direction": "left-to-right",
+    "column_alignment": "strict",
+    "spacing_density": "medium",
+    "avoid_overlaps": true,
+    "keep_label_readable": true
+  },
+  "color_strategy": {
+    "mode": "category",
+    "same_category_same_color": true,
+    "different_category_distinguishable": true,
+    "text_color_priority": "dark neutral"
+  },
+  "suggested_category_colors": {
+    "access": "#DCEBFF",
+    "retrieval": "#DDF3E4",
+    "generation": "#FFECCF",
+    "ops": "#F2E8FF"
+  },
+  "theme_overrides": {
+    "background": "#EEF1F4",
+    "edge_color": "#111827",
+    "node_border": "#4B5563",
+    "node_text": "#111827",
+    "group_fill": "#FFFFFFCC",
+    "group_stroke": "#D1D5DB",
+    "group_text": "#111827"
+  },
+  "usage_notes": [
+    "Use this style profile at planning time (LLM step), then output color-plan.json and DSL.",
+    "Renderer should execute deterministically; it should not invent style logic."
+  ]
+}

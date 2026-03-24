@@ -83,6 +83,19 @@ Renderer responsibilities:
 - Keep source-to-visual mapping stable across rounds
 - Select palette candidates from `references/color-presets.md` (web-curated sources)
 
+## Style Profile (English, Default)
+Use this style profile as the default visual baseline:
+
+- `references/style-profiles/clean-rounded-v1.json`
+
+Profile intent:
+- clean and linear layout
+- rounded corners as primary shape language
+- category-based color assignment (same category, same color)
+- high legibility for README architecture diagrams
+
+When users ask for "clean / linear / rounded" style, prioritize this profile unless they explicitly override it.
+
 ## Notes
 - Position this skill as a paper-figure skill, not a TikZ-only skill.
 - TikZ is an internal high-quality backend, SVG is compatibility backend.
@@ -91,3 +104,4 @@ Renderer responsibilities:
 - `references/output-contract.md`
 - `references/edit-protocol.md`
 - `references/color-presets.md`
+- `references/style-profiles/clean-rounded-v1.json`
